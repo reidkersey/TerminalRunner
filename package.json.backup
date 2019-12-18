@@ -1,0 +1,75 @@
+{
+  "name": "sbstartup",
+  "displayName": "SBStartup",
+  "description": "Start and run the APIs",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.41.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.helloWorld"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": [
+      {
+        "title": "Num APIs",
+        "properties": {
+          "conf.runAPI.folderPath": {
+            "type": "string",
+            "default": "",
+            "description": "Path to folder to run",
+            "scope": "resource"
+          },
+          "conf.runAPI.command": {
+            "type": "string",
+            "default": "",
+            "description": "Command to run",
+            "scope": "resource"
+          },
+          "conf.runAPI.name": {
+            "type": "string",
+            "default": "",
+            "description": "Name of the resource",
+            "scope": "resource"
+          },
+          "conf.view.terminalWindowName": {
+            "type": "string",
+            "default": "",
+            "description": "Name of the terminal window",
+            "scope": "resource"
+          },
+          "conf.view.openAdditionalTerminal": {
+            "type": "boolean",
+            "default": "false",
+            "description": "Open a new terminal window in the same folder after the command was run",
+            "scope": "resource"
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.run",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.41.0",
+    "eslint": "^6.6.0",
+    "glob": "^7.1.5",
+    "mocha": "^6.2.2",
+    "typescript": "^3.6.4",
+    "vscode-test": "^1.2.2"
+  }
+}

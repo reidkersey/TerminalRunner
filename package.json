@@ -1,0 +1,81 @@
+{
+  "name": "terminalRunner",
+  "displayName": "Terminal Open and Run",
+  "description": "Open up a terminal and run a specified command. Useful for npm run and yarn run",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.41.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.terminalRunner"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": [
+      {
+        "title": "Terminal Runner",
+        "properties": {
+          "folderPath": {
+            "type": "string",
+            "default": "",
+            "description": "Path to folder to run. Each runnable needs a path. Separated by ; ends with /",
+            "scope": "resource"
+          },
+          "command": {
+            "type": "string",
+            "default": "",
+            "description": "Command to run. Multiple lines separated by |~|, each runnable needs a command, separated by ;",
+            "scope": "resource"
+          },
+          "name": {
+            "type": "string",
+            "default": "",
+            "description": "Name of the runnable. Runnable names separated by ;",
+            "scope": "resource"
+          },
+          "terminalWindowName": {
+            "type": "string",
+            "default": "",
+            "description": "Name of the terminal window. Each runnable needs a terminal window name. Terminal window names separed by ;",
+            "scope": "resource"
+          },
+          "openAdditionalTerminal": {
+            "type": "boolean",
+            "default": true,
+            "description": "Open a new terminal window in the same folder after the command was run?",
+            "scope": "resource"
+          },
+          "delayCommand": {
+            "type": "integer",
+            "default": 2,
+            "description": "The delay between the commands to be run, in seconds",
+            "scope": "resource"
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.terminalRunner",
+        "title": "Terminal Runner"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.41.0",
+    "eslint": "^6.6.0",
+    "glob": "^7.1.5",
+    "mocha": "^6.2.2",
+    "typescript": "^3.6.4",
+    "vscode-test": "^1.2.2"
+  }
+}
