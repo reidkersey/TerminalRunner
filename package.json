@@ -2,6 +2,8 @@
   "name": "terminalRunner",
   "displayName": "Terminal Open and Run",
   "description": "Open up a terminal and run a specified command. Useful for npm run and yarn run",
+  "publisher": "reidkersey",
+  "repository": "https://github.com/reidkersey/TerminalRunner",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.41.0"
